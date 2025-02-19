@@ -21,15 +21,9 @@ blocks:
       jobs:
         - name: Make app
           commands:
-            - checkout
             - make app
-            - artifact push workflow app
   - name: Tests
     task:
-      prologue:
-        commands:
-          - checkout
-          - artifact pull workflow app
       jobs:
         - name: Unit tests
           commands:
